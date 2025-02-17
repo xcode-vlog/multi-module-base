@@ -1,0 +1,20 @@
+
+services:
+  test1:
+    image: mariadb:10.5.18
+    container_name: test1-db
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=test1234
+      - MARIADB_USER=test1
+      - MARIADB_PASSWORD=test1!
+      - MARIADB_DATABASE=test1
+      - TZ=Asia/Seoul
+    volumes:
+      - ./test1/data:/var/lib/mysql
+      - ./test1/config:/etc/mysql/conf.d
+      - ./test1/mysql/init:/docker-entrypoint-initdb.d
+    command:
+      - "--lower_case_table_names=1"
+

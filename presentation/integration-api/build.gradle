@@ -1,0 +1,10 @@
+dependencies {
+    implementation(project(":presentation:edu-api"))
+    implementation(project(":presentation:board-api"))
+
+    // jdbc log
+    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+
+}
+
+bootJar.enabled=true

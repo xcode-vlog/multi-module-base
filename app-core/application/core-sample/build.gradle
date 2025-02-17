@@ -1,0 +1,7 @@
+dependencies {
+    implementation(project(":app-adapter:adapter-persistence:mybatis-test1"))
+
+    implementation("org.springframework:spring-context")
+}
+
+jar.enabled=true

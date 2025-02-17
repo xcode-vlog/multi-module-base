@@ -1,0 +1,28 @@
+server:
+  port: ${SERVER_PORT:8080}
+spring:
+  application:
+    name: integrated-api
+  datasource:
+    hikari:
+      jdbc-url:
+  config:
+    import:
+      - optional:classpath:.integration.env[.properties]
+      - optional:classpath:edu-api-application.yaml
+      - optional:classpath:board-api-application.yaml
+      - optional:classpath:mybatis-test1-application.yaml
+      - optional:classpath:mybatis-test2-application.yaml
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(%5p) [%cyan(%-60logger{60}).%magenta(%-25M{25}):%green(%-5line{5})] : [%yellow(${spring.application.name})] %msg%n"
+  level:
+    root: info
+    jdbc:
+      connection: off
+      audit: off
+      sqlonly: off
+      resultset: off
+      resultsettable: off
+      sqltiming: info

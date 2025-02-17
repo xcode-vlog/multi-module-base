@@ -1,0 +1,13 @@
+rootProject.name = "lime-edu"
+
+include(":common:utils")
+include(":presentation:integration-api")
+
+include(":presentation:edu-api")
+include(":presentation:board-api")
+
+include(":app-core:application:core-user")
+include(":app-core:application:core-sample")
+
+include(":app-adapter:adapter-persistence:mybatis-test1")
+include(":app-adapter:adapter-persistence:mybatis-maria-lime-edu")

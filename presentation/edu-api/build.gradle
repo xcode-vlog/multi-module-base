@@ -1,0 +1,6 @@
+dependencies {
+    implementation(project(":common:utils"))
+    implementation(project(":app-core:application:core-sample"))
+}
+
+//jar.enabled=true
