@@ -2,6 +2,7 @@ dependencies {
     implementation(project(":common:utils"))
     implementation(project(":app-core:application:core-sample"))
     implementation(project(":common:token"))
+    implementation(project(":common:jasypt"))
 }
 
 //jar.enabled=true
