@@ -2,7 +2,6 @@ package com.lime.token.provider;
 
 import com.lime.token.domain.JwtTokenType;
 import com.lime.token.provider.functions.TokenResolver;
-import com.lime.token.provider.TokenUtils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import jakarta.servlet.ServletRequest;
@@ -26,20 +25,19 @@ public class JwtTokenProvider implements TokenProvider {
     private final Long accessTokenExpiration;
     private final Long refreshTokenExpiration;
 
+    public JwtTokenProvider(String secret, final Long accessTokenExpiration, final Long refreshTokenExpiration) {
+        this.secret = secret;
+        this.accessTokenExpiration = accessTokenExpiration;
+        this.refreshTokenExpiration = refreshTokenExpiration;
+
+        log.info("Initialized TokenProvider");
+    }
     public JwtTokenProvider(TokenProperties tokenProperties) {
+        this(tokenProperties.getSecret(), tokenProperties.getAccessTokenExpiration(), tokenProperties.getRefreshTokenExpiration());
+    }
 
-//        if("notExists".equals(secret)) {
-//            throw new IllegalArgumentException("""
-//                    jwt.secret is required.
-//                    jwt.expiration.access-token is optional. default is 0L.
-//                    jwt.expiration.required-token is optional. default is 0L.
-//                    """);
-//        }
-        this.secret = tokenProperties.getSecret();
-        this.accessTokenExpiration = tokenProperties.getAccessTokenExpiration();
-        this.refreshTokenExpiration = tokenProperties.getRefreshTokenExpiration();
-
-        log.info("Initialized Default TokenProvider");
+    public JwtTokenProvider(TokenProviderConfigurer configurer) {
+        this(configurer.properties());
     }
 
 
