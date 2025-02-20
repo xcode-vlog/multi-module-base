@@ -13,6 +13,7 @@ spring:
       - optional:classpath:board-api-application.yaml
       - optional:classpath:mybatis-test1-application.yaml
       - optional:classpath:mybatis-test2-application.yaml
+      - optional:classpath:token-application.yaml
 
 logging:
   pattern:

@@ -1,6 +1,8 @@
-rootProject.name = "lime-edu"
+rootProject.name = "multi-module-base"
 
 include(":common:utils")
+include(":common:token")
+
 include(":presentation:integration-api")
 
 include(":presentation:edu-api")

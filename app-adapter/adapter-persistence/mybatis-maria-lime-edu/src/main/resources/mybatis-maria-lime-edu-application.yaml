@@ -1,0 +1,8 @@
+spring:
+  lime-edu:
+    datasource:
+      hikari:
+        jdbc-url: jdbc:log4jdbc:mariadb://121.170.188.106:33306/limeedu
+        driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+        username: limeEdu
+        password: limeEdu1!

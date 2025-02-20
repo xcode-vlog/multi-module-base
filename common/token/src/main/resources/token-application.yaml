@@ -1,0 +1,5 @@
+jwt:
+  secret: abcdefghijklmnopqrstuvwxyz
+  experation:
+    access-token: 10
+    refresh-token: 20

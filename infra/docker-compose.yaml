@@ -4,7 +4,7 @@ services:
     image: mariadb:10.5.18
     container_name: test1-db
     ports:
-      - 3306:3306
+      - "3306:3306"
     environment:
       - MARIADB_ROOT_PASSWORD=test1234
       - MARIADB_USER=test1
@@ -17,4 +17,12 @@ services:
       - ./test1/mysql/init:/docker-entrypoint-initdb.d
     command:
       - "--lower_case_table_names=1"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    command: --requirepass 'test'
+    volumes:
+      - ./redis-data:/data
 

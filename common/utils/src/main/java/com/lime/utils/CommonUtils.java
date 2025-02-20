@@ -1,5 +1,8 @@
-package com.lime.edu.utils;
+package com.lime.utils;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class CommonUtils {
 
     private CommonUtils() {}
