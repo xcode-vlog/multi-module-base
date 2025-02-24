@@ -2,7 +2,7 @@ package com.lime.token.provider;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties("jwt")
+@ConfigurationProperties(prefix = "jwt")
 public class TokenProperties {
 
     public class Experation {

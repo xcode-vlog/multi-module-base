@@ -2,8 +2,12 @@ dependencies {
     implementation(project(":presentation:edu-api"))
     implementation(project(":presentation:board-api"))
 
+    implementation(project(":common:token"))
+
     // jdbc log
     implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
 
 }
 

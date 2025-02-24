@@ -79,11 +79,13 @@ public class JwtTokenProvider implements TokenProvider {
 
 
     @Override
+    @SuppressWarnings("rawtypes")
     public Map parsePayload(String token) {
         return TokenUtils.decodePayload(token);
     }
 
     @Override
+    @SuppressWarnings({"unchecked"})
     public boolean isExpiredToken(String token) {
         Map<String, Object> map = TokenUtils.decodePayload(token);
 
